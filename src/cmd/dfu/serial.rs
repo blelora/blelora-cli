@@ -545,7 +545,7 @@ fn get_ack_nr(port: &mut Box<dyn SerialPort>) -> Option<u8> {
 
         match port.read(serial_buf.as_mut_slice()) {
             Ok(_) => log::debug!("read successful"),
-            Err(_) => return None, 
+            Err(_) => return None,
         }
         temp_buf.extend(serial_buf);
 
