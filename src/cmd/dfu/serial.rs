@@ -541,7 +541,8 @@ fn send_packet(port: &mut Box<dyn SerialPort>, frame: Vec<u8>, bar: &mut Progres
             packet_sent = true;
 
             if attempts > 3 {
-                panic!("Timed out waiting for ACK")
+                println!("The firmware update failed. Please try again.");
+                process::exit(1);
             }
         }
     }
